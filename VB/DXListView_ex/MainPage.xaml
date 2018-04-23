@@ -1,0 +1,61 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DXListView_ex"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Layout="using:DevExpress.UI.Xaml.Layout"
+    xmlns:dxEditors ="using:DevExpress.UI.Xaml.Editors"
+    xmlns:data="using:DXListView_ex.Data"
+    x:Class="DXListView_ex.MainPage"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <data:ScientistsData x:Key="sampleScientistsData" />
+    </Page.Resources>
+
+    <Grid DataContext="{StaticResource sampleScientistsData}"
+        Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Layout:DXListView ItemsSource="{Binding DataSource}"
+                           HorizontalAlignment="Left" Width="360" Height="450">
+
+            <!--The template to visualize an item's contents-->
+            <Layout:DXListView.ItemTemplate>
+                <DataTemplate>
+                    <Layout:LayoutControl Width="350" Orientation="Vertical" HorizontalAlignment="Center" >
+
+                        <Layout:LayoutControl.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="TextWrapping" Value="Wrap"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Width" Value="150"/>
+                            </Style>
+                        </Layout:LayoutControl.Resources>
+
+                        <Layout:LayoutGroup Orientation="Horizontal" >
+                            <Image Source="{Binding ImageSource}" Height="150" Width="100" Stretch="UniformToFill" VerticalAlignment="Top"/>
+                            <Layout:LayoutGroup Orientation="Vertical" VerticalItemSizeMode="AutoSize">
+
+                                <Layout:LayoutItem Header="Name:" ShowHeader="False">
+                                    <TextBlock Text="{Binding Name}"/>
+                                </Layout:LayoutItem>
+                                <Layout:LayoutItem Header="Born:" ShowHeader="False">
+                                    <TextBlock Text="{Binding Born}"/>
+                                </Layout:LayoutItem>
+                                <Layout:LayoutItem Header="Residence:" Visibility="Collapsed">
+                                    <TextBlock Text="{Binding Residence}" />
+                                </Layout:LayoutItem>
+                                <Layout:LayoutItem Header="Fields:" ShowHeader="False"  >
+                                    <TextBlock Text="{Binding Fields}" FontSize="11"/>
+                                </Layout:LayoutItem>
+
+                            </Layout:LayoutGroup>
+                        </Layout:LayoutGroup>
+
+                    </Layout:LayoutControl>
+                </DataTemplate>
+            </Layout:DXListView.ItemTemplate>
+
+        </Layout:DXListView>
+    </Grid>
+</Page>
