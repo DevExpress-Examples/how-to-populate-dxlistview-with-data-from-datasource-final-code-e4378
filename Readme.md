@@ -3,7 +3,7 @@
 
 * [StandardStyles.xaml](./CS/DXListView_ex/Common/StandardStyles.xaml) (VB: [StandardStyles.xaml](./VB/DXListView_ex/Common/StandardStyles.xaml))
 * [DataStorage.cs](./CS/DXListView_ex/Data/DataStorage.cs) (VB: [DataStorage.vb](./VB/DXListView_ex/Data/DataStorage.vb))
-* [MainPage.xaml](./CS/DXListView_ex/MainPage.xaml) (VB: [MainPage.xaml.vb](./VB/DXListView_ex/MainPage.xaml.vb))
+* [MainPage.xaml](./CS/DXListView_ex/MainPage.xaml) (VB: [MainPage.xaml](./VB/DXListView_ex/MainPage.xaml))
 * [MainPage.xaml.cs](./CS/DXListView_ex/MainPage.xaml.cs) (VB: [MainPage.xaml.vb](./VB/DXListView_ex/MainPage.xaml.vb))
 <!-- default file list end -->
 # How to: Populate DXListView with Data from Datasource (Final Code)
